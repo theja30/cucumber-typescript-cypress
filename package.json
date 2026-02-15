@@ -1,0 +1,35 @@
+{
+  "name": "cucumber-typescript-cypress",
+  "version": "1.0.0",
+  "description": "Automation Framework using Cucumber Typescript and Cypress",
+  "main": "index.js",
+  "scripts": {
+    "cy:run": "cypress run --browser chrome",
+    "test:parallel": "npm run clean:reports && cypress-parallel -s cy:run -t 4 -d \"cypress/e2e/**/*.feature\" && npm run report",
+    "report": "ts-node generate-report.ts",
+    "clean:reports": "rm -rf reports && mkdir -p reports"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theja30/cucumber-typescript-cypress.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theja30/cucumber-typescript-cypress/issues"
+  },
+  "homepage": "https://github.com/theja30/cucumber-typescript-cypress#readme",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^23.0.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.8",
+    "concurrently": "^9.2.1",
+    "cypress": "^15.10.0",
+    "cypress-parallel": "^0.15.0",
+    "cypress-split": "^1.24.28",
+    "esbuild": "^0.27.3",
+    "multiple-cucumber-html-reporter": "^3.10.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
